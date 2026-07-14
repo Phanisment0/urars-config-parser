@@ -1,8 +1,3 @@
-/**
- * A memory-efficient wrapper for a segment of a character buffer.
- * Instead of creating a new String object for every token, this class
- * points directly to the original data, significantly reducing GC pressure.
- */
 public class BufferedString {
 	public final char[] buffer;
 	public final int start;
@@ -21,9 +16,6 @@ public class BufferedString {
 		return this.length;
 	}
 
-	/**
-	 * Compares the content of this buffer segment with another object.
-	 */
 	@Override
 	public boolean equals(Object o) {
 		if (this == o) return true;
@@ -42,9 +34,6 @@ public class BufferedString {
 		return true;
 	}
 
-	/**
-	 * Generates a hash code berdasarkan isi karakter (Algoritma String standard).
-	 */
 	@Override
 	public int hashCode() {
 		int h = 0;
@@ -52,9 +41,6 @@ public class BufferedString {
 		return h;
 	}
 
-	/**
-	 * Converts the buffered segment into a standard String secara instan dan cepat.
-	 */
 	@Override
 	public String toString() {
 		if (this.length == 0) return "";

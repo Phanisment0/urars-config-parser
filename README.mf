@@ -5,3 +5,21 @@ Time: 4.7488 ms
 Time: 8.0593 ms
 Time: 6.3994 ms
 ```
+
+Structure:
+```
+example entry {}
+
+entry
+example {
+	content
+}
+```
+
+What code see: 
+```
+HEADER BODY
+
+HEADER BODY
+
+```
