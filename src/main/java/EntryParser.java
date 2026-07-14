@@ -2,7 +2,7 @@ import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
-public final class Parser {
+public final class EntryParser {
 	private static final char L_BLOCK = '{';
 	private static final char R_BLOCK = '}';
 
@@ -11,7 +11,7 @@ public final class Parser {
 
 	private int pos = 0;
 
-	public Parser(char[] buffer, int length) {
+	public EntryParser(char[] buffer, int length) {
 		this.buffer = buffer;
 		this.length = length;
 	}

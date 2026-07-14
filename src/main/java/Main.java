@@ -20,8 +20,8 @@ public final class Main {
 
 		try (var reader = new CharReader("example")) {
 			reader.read();
-			var parser = new Parser(reader.buffer(), reader.length());
-			System.out.println(parser.parse());
+			var parser = new EntryParser(reader.buffer(), reader.length());
+			parser.parse();
 		} catch (IOException | ParseException e) {
 			e.printStackTrace();
 		}

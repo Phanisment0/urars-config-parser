@@ -8,64 +8,56 @@ public class BufferedString {
 	public final int start;
 	public final int length;
 
-	public BufferedString(final char[] buffer, final int start, final int length) {
+	public final int end; 
+
+	public BufferedString(final char[] buffer, final int start, final int end) {
 		this.buffer = buffer;
 		this.start = start;
-		this.length = length;
+		this.end = end;
+		this.length = Math.max(0, end - start); 
 	}
 
 	public int length() {
-		if (start == length) return 0;
-		return Math.abs(start - length);
+		return this.length;
 	}
 
 	/**
 	 * Compares the content of this buffer segment with another object.
-	 * This ensures that two different BufferedString objects pointing to 
-	 * identical character sequences are treated as equal.
 	 */
 	@Override
 	public boolean equals(Object o) {
 		if (this == o) return true;
 		if (o instanceof String str) {
-			if (length != str.length()) return false;
-			for (int i = 0; i < str.length(); i++) if (this.buffer[this.start + i] != str.charAt(i)) return false;
+			if (this.length != str.length()) return false;
+			for (int i = 0; i < this.length; i++) if (this.buffer[this.start + i] != str.charAt(i)) return false;
 			return true;
 		}
+		
 		if (!(o instanceof BufferedString that)) return false;
-
-		// Fast fail: if lengths differ, they cannot be equal
 		if (this.length != that.length) return false;
-
-		// Character-by-character comparison to ensure content equality
-		for (int i = 0; i < this.length; i++) if (this.buffer[this.start + i] != that.buffer[that.start + i]) return false;
+		for (int i = 0; i < this.length; i++) {
+			if (this.buffer[this.start + i] != that.buffer[that.start + i]) return false;
+		}
 		
 		return true;
 	}
 
 	/**
-	 * Generates a hash code based on the character content.
-	 * Uses the same algorithm as java.lang.String (s[0]*31^(n-1) + s[1]*31^(n-2) + ...)
-	 * to ensure consistent behavior when used in HashMaps.
+	 * Generates a hash code berdasarkan isi karakter (Algoritma String standard).
 	 */
 	@Override
 	public int hashCode() {
 		int h = 0;
-		// Content-based hashing is required because HashMaps rely on this 
-		// to locate the correct bucket for the key.
-		for (int i = 0; i < length; i++) h = 31 * h + buffer[start + i]; 
+		for (int i = 0; i < this.length; i++) h = 31 * h + buffer[this.start + i]; 
 		return h;
 	}
 
 	/**
-	 * Converts the buffered segment into a standard String.
-	 * Note: This creates a new String object and should only be called 
-	 * when an actual String representation is needed (e.g., logging or final output).
+	 * Converts the buffered segment into a standard String secara instan dan cepat.
 	 */
 	@Override
 	public String toString() {
-		var b = new StringBuilder();
-		for (int i = start; i < length; i++) b.append(buffer[i]);
-		return b.toString();
+		if (this.length == 0) return "";
+		return new String(buffer, start, length);
 	}
 }
