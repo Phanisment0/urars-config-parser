@@ -1,0 +1,10 @@
+example {
+	ok
+	lol {
+		ok
+	}
+}
+
+lol {
+	pl
+}
