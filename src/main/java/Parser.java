@@ -3,6 +3,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public final class Parser {
+	private static final char L_BLOCK = '{';
+	private static final char R_BLOCK = '}';
+
 	private final char[] buffer;
 	private final int length;
 
@@ -23,10 +26,11 @@ public final class Parser {
 		return buffer[pos];
 	}
 
-	private void expect(char expected) throws ParseException {
+	private int expect(char expected) throws ParseException {
 		int c = next(); 
 		if (c == -1) throw new ParseException("Expected '" + expected + "' but reached EOF", pos);
 		if (c != expected) throw new ParseException("Expected '" + expected + "' but got '" + (char)c + "'", pos);
+		return c;
 	}
 
 	private void skipWhitespace() {
@@ -41,47 +45,46 @@ public final class Parser {
 
 			if (peek() == -1) break;
 
-			BufferedString key = this.parseText();
+			BufferedString header = this.parseHeader();
 
 			skipWhitespace();
 			
-			if (key.length() == 0) {
+			if (header.length() == 0) {
 				skipWhitespace();
 				if (peek() == -1) break;
-				throw new ParseException("Error: Key cant be empty", pos);
+				throw new ParseException("Error: Header cant be empty", pos);
 			}
 			
 			skipWhitespace();
-			expect('{');
+			expect(L_BLOCK);
 
 			BufferedString value = this.parseValue();
 			
-			result.add(new Entry(key, value));
+			result.add(new Entry(header, value));
 		}
 		return result;
 	}
 
-	public BufferedString parseText() {
+	private BufferedString parseHeader() {
 		int start = pos;
-		while (true) {
-			int c = peek();
-			if (c == -1) break;
-			if (Character.isWhitespace(c)) break;
-			if (c == '{' || c == '}') break;
+		int c;
+		while ((c = peek()) != -1) {
+			if (c == L_BLOCK || c == R_BLOCK) break;
 			next();
 		}
-		return new BufferedString(buffer, start, pos);
+		int end = pos;
+		while (end > start && Character.isWhitespace(buffer[end - 1])) end--;
+		return new BufferedString(buffer, start, end);
 	}
 
-	public BufferedString parseValue() throws ParseException {
+	private BufferedString parseValue() throws ParseException {
 		int start = pos;
 		int depth = 1;
 		while (depth > 0) {
 			int c = next();
 			if (c == -1) throw new ParseException("Error: Curly bracket is not closed", pos);
-
-			if (c == '{') depth++;
-			else if (c == '}') depth--;
+			if (c == L_BLOCK) depth++;
+			else if (c == R_BLOCK) depth--;
 		}
 		return new BufferedString(buffer, start, pos - 1);
 	}

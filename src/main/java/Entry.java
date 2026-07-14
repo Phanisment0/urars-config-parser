@@ -1,6 +1,6 @@
-public record Entry(BufferedString key, BufferedString entry) {
+public record Entry(BufferedString header, BufferedString entry) {
 	@Override
 	public String toString() {
-		return key.toString() + "=" + entry.toString();
+		return header.toString() + "=" + entry.toString();
 	}
 }

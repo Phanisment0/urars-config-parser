@@ -16,6 +16,8 @@ public final class Main {
 		// 	System.out.println(result);
 		// }
 
+		long start = System.nanoTime();
+
 		try (var reader = new CharReader("example")) {
 			reader.read();
 			var parser = new Parser(reader.buffer(), reader.length());
@@ -23,5 +25,8 @@ public final class Main {
 		} catch (IOException | ParseException e) {
 			e.printStackTrace();
 		}
+
+		long end = System.nanoTime();
+		System.out.println("Time: " + ((end - start) / 1_000_000.0) + " ms");
 	}
 }

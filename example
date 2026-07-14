@@ -1,10 +1,5 @@
-example {
-	ok
-	lol {
-		ok
-	}
-}
-
-lol {
-	pl
+skill test 
+  @cooldown=10
+{
+	message{m=Hi} @self
 }
