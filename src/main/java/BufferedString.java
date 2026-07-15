@@ -1,15 +1,15 @@
 public class BufferedString {
 	public final char[] buffer;
 	public final int start;
-	public final int length;
-
 	public final int end; 
+
+	public final int length;
 
 	public BufferedString(final char[] buffer, final int start, final int end) {
 		this.buffer = buffer;
 		this.start = start;
 		this.end = end;
-		this.length = Math.max(0, end - start); 
+		this.length = end - start;
 	}
 
 	public int length() {
