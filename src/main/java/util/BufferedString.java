@@ -7,11 +7,11 @@ public class BufferedString {
 
 	public final int end; 
 
-	public BufferedString(final char[] buffer, final int start, final int end) {
+	public BufferedString(final byte[] buffer, final int start, final int end) {
 		this.buffer = buffer;
 		this.start = start;
 		this.end = end;
-		this.length = Math.max(0, end - start); 
+		this.length = end - start; 
 	}
 
 	public int length() {
