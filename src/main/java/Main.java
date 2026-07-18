@@ -1,11 +1,10 @@
 import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
+import java.text.ParseException;
 import java.util.Arrays;
 
 import parser.Parser;
-import tokenize.Lexer;
-import tokenize.Token;
+import parser.line.LineParser;
+import util.BufferedString;
 
 public final class Main {
 	private static final File TEST_FILE = new File("example");
@@ -13,15 +12,15 @@ public final class Main {
 	private static final int WARMUP = 20;
 	private static final int ITERATIONS = 100;
 
-	public static void main(String[] args) {
-		// try {
-		// 	var parser = new Parser(TEST_FILE.toPath());
-		// 	System.out.println(parser.parse());
-		// } catch (Exception e) {
-		// 	e.printStackTrace();
-		// }
+	public static void main(String[] args) throws ParseException {
+		byte[] raw_line = """
+			key{test=a;ok=1} ctx
+		""".getBytes();
 
-		run();
+		var line = new LineParser(new BufferedString(raw_line, 0, raw_line.length));
+		line.parse();
+
+		System.out.println(line);
 	}
 
 	private static void run() {

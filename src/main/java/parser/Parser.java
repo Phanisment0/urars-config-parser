@@ -45,7 +45,7 @@ public class Parser {
 			BufferedString header = token();
 
 			token = lexer.next();
-			if (token != Token.L_BRACKET) throw new ParseException("Expected {", lexer.pos);
+			if (token != Token.L_BRACKET) throw new ParseException("Expected '{'", lexer.pos);
 			BufferedString value = parseValue();
 			list.add(new Entry(header, value));
 		}
@@ -57,12 +57,9 @@ public class Parser {
 		int depth = 1;
 		while (depth > 0) {
 			Token token = lexer.next();
-			switch (token) {
-				case L_BRACKET -> depth++;
-				case R_BRACKET -> depth--;
-				case EOF -> throw new ParseException("Unexpected EOF", lexer.pos);
-				default -> {}
-			}
+			if (token == Token.EOF) throw new ParseException("Missing '}'", lexer.pos);
+			if (token == Token.L_BRACKET) depth++;
+			else if (token == Token.R_BRACKET) depth--;
 		}
 		return new BufferedString(buffer, start, lexer.start);
 	}

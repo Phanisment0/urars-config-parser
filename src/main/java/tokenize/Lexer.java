@@ -1,5 +1,7 @@
 package tokenize;
 
+import util.ParserUtils;
+
 public final class Lexer {
 	private byte[] buffer;
 	public int pos, start, end = 0;
@@ -10,28 +12,24 @@ public final class Lexer {
 		this.buffer = buffer;
 	}
 
-	private boolean isWhitespace(byte c) {
-		return c == ' ' || c == '\t' || c == '\n' || c == '\r';
-	}
-
 	private void skipWhitespace() {
-		while (peek() != -1 && isWhitespace(peek())) pos++;
+		while (peek() != -1 && ParserUtils.isWhitespace(peek())) pos++;
 	}
 
-	private byte skip() {
+	private int skip() {
 		if (pos >= buffer.length) return -1;
-		return buffer[pos++];
+		return buffer[pos++] & 0xFF;
 	}
 
-	private byte peek() {
+	private int peek() {
 		if (pos >= buffer.length) return -1;
-		return buffer[pos];
+		return buffer[pos] & 0xFF;
 	}
 
 	public Token next() {
 		skipWhitespace();
 
-		byte c = peek();
+		int c = peek();
 
 		if (c == -1) return Token.EOF;
 
@@ -57,10 +55,10 @@ public final class Lexer {
 
 		start = pos;
 		int current;
-		while ((current = peek()) != -1 && current != '{' && current != '}' && current != '#') skip();
+		while ((current = peek()) != -1 && current != '{' && current != '#') skip();
 		end = pos;
 
-		while (end > start && isWhitespace(buffer[end - 1])) end--;
+		while (end > start && ParserUtils.isWhitespace(buffer[end - 1])) end--;
 		if (start == end) return next();
 		return Token.TEXT;
 	}

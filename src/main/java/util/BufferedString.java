@@ -1,21 +1,18 @@
 package util;
 
 public class BufferedString {
-	public final byte[] buffer;
-	public final int start;
-	public final int length;
+	public static final BufferedString EMPTY = new BufferedString(null, 0, 0);
+	public byte[] buffer;
+	public int start;
+	public int end;
 
-	public final int end; 
+	public int length;
 
 	public BufferedString(final byte[] buffer, final int start, final int end) {
 		this.buffer = buffer;
 		this.start = start;
 		this.end = end;
 		this.length = end - start; 
-	}
-
-	public int length() {
-		return this.length;
 	}
 
 	@Override
