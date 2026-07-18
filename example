@@ -1,9 +1,1459 @@
-skill test 
-  @cooldown=10 
+skill test
+	@cooldown = 10
 {
-	message{m=Hi} @self
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
 }
 
-skill ok {
-	
+skill test
+	@cooldown = 10
+{
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+}
+
+skill test
+	@cooldown = 10
+{
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+}
+
+skill test
+	@cooldown = 10
+{
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
+	- if{condition=[- day true];then=[
+		- message{m=Pass} @self
+	]}
+	- mechanic
 }
