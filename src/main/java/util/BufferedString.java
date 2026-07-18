@@ -3,15 +3,15 @@ package util;
 public class BufferedString {
 	public final byte[] buffer;
 	public final int start;
-	public final int end; 
-	
 	public final int length;
 
-	public BufferedString(final byte[] buffer, final int start, final int end) {
+	public final int end; 
+
+	public BufferedString(final char[] buffer, final int start, final int end) {
 		this.buffer = buffer;
 		this.start = start;
 		this.end = end;
-		this.length = end - start; 
+		this.length = Math.max(0, end - start); 
 	}
 
 	public int length() {
