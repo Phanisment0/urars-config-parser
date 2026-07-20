@@ -9,12 +9,7 @@ import parser.Parser;
 class EntryTest {
 	@Test
 	public void parsingAll() throws ParseException {
-		byte[] data = """
-			field =value
-
-			key {
-			test
-			}""".getBytes();
+		byte[] data = "key { block example } # Comment\n".getBytes();
 		var parser = new Parser(data);
 		System.out.println(parser.parse());
 	}
