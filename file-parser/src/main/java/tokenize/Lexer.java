@@ -7,14 +7,8 @@ public final class Lexer {
 	private byte[] buffer;
 	public int pos = 0, start = 0, end = 0;
 
-	// private int line = 1, colum = 0;
-
 	public Lexer(byte[] buffer) {
 		this.buffer = buffer;
-	}
-
-	private void skipWhitespace() {
-		while (peek() != -1 && ParserUtils.isWhitespace(peek())) pos++;
 	}
 
 	public static boolean isSytax(int c) {
@@ -22,6 +16,21 @@ public final class Lexer {
 				|| c == '}'
 				|| c == '='
 				|| c == '#';
+	}
+
+	public static boolean isWhitespace(int c) {
+		return c == ' '
+				|| c == '\t'
+				|| c == '\r';
+	}
+
+	public static boolean isNewLine(int c) {
+		return c == '\n'
+				|| c == '\r';
+	}
+
+	private void skipWhitespace() {
+		while (peek() != -1 && isWhitespace(peek())) pos++;
 	}
 
 	private int skip() {
@@ -34,13 +43,22 @@ public final class Lexer {
 		return buffer[pos] & 0xFF;
 	}
 
+	public Token lookahead() {
+		int pos = this.pos, start = this.start, end = this.end;
+		
+		Token token = next();
+		
+		this.pos = pos;
+		this.start = start;
+		this.end = end;
+		return token;
+	}
+
 	public Token next() {
 		skipWhitespace();
 
 		int c = peek();
-
 		if (c == -1) return Token.EOF;
-
 		switch (c) {
 			case '{' -> {
 				start = pos;
@@ -60,20 +78,22 @@ public final class Lexer {
 				end = pos;
 				return Token.EQUAL;
 			}
-			case '#' -> {
+			case '\n' -> {
 				start = pos;
-				while (pos < buffer.length && peek() != '\n' && peek() != '\r') skip();
+				skip();
 				end = pos;
+				return Token.NEW_LINE;
+			}
+			case '#' -> { // Commnet will not represent as token
+				while (peek() != -1 && !ParserUtils.isNewLine(peek())) skip();
+				return next();
 			}
 		}
 
 		start = pos;
 		int current;
-		while ((current = peek()) != -1 && !isSytax(current)) skip();
+		while ((current = peek()) != -1 && !isSytax(current) && !isWhitespace(current) && current != '\n') skip();
 		end = pos;
-
-		while (end > start && ParserUtils.isWhitespace(buffer[end - 1])) end--;
-		if (start == end) return next();
 		return Token.TEXT;
 	}
 
@@ -86,5 +106,14 @@ public final class Lexer {
 		this.pos = 0;
 		this.start = 0;
 		this.end = 0;
+	}
+
+	public static enum Token {
+		L_BRACKET,
+		R_BRACKET,
+		NEW_LINE,
+		EQUAL,
+		TEXT,
+		EOF
 	}
 }

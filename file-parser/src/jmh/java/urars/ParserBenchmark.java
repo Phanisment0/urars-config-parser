@@ -30,7 +30,8 @@ public class ParserBenchmark {
 			.append("  - mechanic{} @self\n")
 			.append("  - mechanic{} @self\n")
 			.append("  - mechanic{} @self\n")
-		.append("\n}");
+		.append("\n}\n")
+		.append("test_").append(i).append("=Lololololo\n");
 		large = raw_large.toString().getBytes();
 		parser = new Parser(small);
 	}

@@ -10,9 +10,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import tokenize.Lexer;
-import tokenize.Token;
+import tokenize.Lexer.Token;
 import util.BufferedString;
-import util.ParserUtils;
 
 public class Parser {
 	private final Lexer lexer;
@@ -35,15 +34,22 @@ public class Parser {
 		this.lexer = new Lexer(buffer);
 	}
 
+	public static boolean isSytax(Token t) {
+		return t == Token.L_BRACKET
+				|| t == Token.R_BRACKET
+				|| t == Token.EQUAL;
+	}
+
 	public List<Entry> parse() throws ParseException {
 		List<Entry> list = new ArrayList<>();
 
 		while (true) {
 			Token token = lexer.next();
 			if (token == Token.EOF) break;
-			if (token != Token.TEXT) throw new ParseException("Expected Header", lexer.pos);
+			if (token == Token.NEW_LINE) continue;
+			if (token != Token.TEXT) throw new ParseException("Expected Key", lexer.pos);
 
-			BufferedString header = token();
+			BufferedString header = parseKey();
 
 			token = lexer.next();
 			if (token == Token.L_BRACKET) {
@@ -57,19 +63,29 @@ public class Parser {
 		return list;
 	}
 
-	/*
+	/**
+	 * TEXT ... isSytax()
+	 */
+	private BufferedString parseKey() throws ParseException {
+		int start = lexer.start;
+		while (true)  {
+			Token token = lexer.lookahead();
+			if (token == Token.EOF) throw new ParseException("Unexpected EOF", lexer.pos);
+			if (isSytax(token)) return new BufferedString(buffer, start, lexer.end);
+			lexer.next();
+		}
+	}
+
+	/**
 	 * TEXT EQUAL TEXT
 	 */
-	private BufferedString parseField() {
-		int start = lexer.end, end = lexer.end;
-		while (end < buffer.length) {
-			int c = buffer[end] & 0xFF;
-			if (ParserUtils.isNewLine(c) || Lexer.isSytax(c)) break;
-			end++;
+	private BufferedString parseField() throws ParseException {
+		int start = lexer.end;
+		while (true) {
+			Token token = lexer.next();
+			if (token == Token.EOF) throw new ParseException("Unexpected EOF", lexer.pos);
+			if (isSytax(token) || token == Token.NEW_LINE) return new BufferedString(buffer, start, lexer.end);
 		}
-
-		lexer.pos = end + 1;
-		return new BufferedString(buffer, start, end);
 	}
 
 	/**
@@ -80,6 +96,7 @@ public class Parser {
 		int depth = 1;
 		while (depth > 0) {
 			Token token = lexer.next();
+			if (token == Token.NEW_LINE) continue;
 			if (token == Token.EOF) throw new ParseException("Missing '}'", lexer.pos);
 			if (token == Token.L_BRACKET) depth++;
 			else if (token == Token.R_BRACKET) depth--;

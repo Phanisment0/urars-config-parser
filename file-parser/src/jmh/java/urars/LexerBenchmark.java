@@ -3,7 +3,7 @@ import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.infra.Blackhole;
 
 import tokenize.Lexer;
-import tokenize.Token;
+import tokenize.Lexer.Token;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -21,7 +21,9 @@ public class LexerBenchmark {
 
 	@Setup(Level.Trial)
 	public void setup() throws IOException {
-		var raw_small = "key { block example } # Comment\n";
+		var raw_small = """
+		key { block example } # Comment
+		field = value""";
 		small = raw_small.getBytes();
 		var raw_large = new StringBuilder();
 		for (int i = 0; i < 100; i++) raw_large.append("skill ex_").append(i).append(" {\n")
@@ -30,7 +32,8 @@ public class LexerBenchmark {
 			.append("  - mechanic{} @self\n")
 			.append("  - mechanic{} @self\n")
 			.append("  - mechanic{} @self\n")
-		.append("\n}");
+		.append("\n}\n")
+		.append("test_").append(i).append("=Lololololo\n");
 		large = raw_large.toString().getBytes();
 
 		lexer = new Lexer(small);
