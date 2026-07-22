@@ -18,13 +18,22 @@ class LexerTest {
 		""".getBytes();
 		var l = new MathLexer(new BufferedString(input, 0, input.length));
 		
-		assertEquals(Token.NUMBER, l.next());
+		assertEquals(Token.NUM, l.next());
 		System.out.println(l.token());
 
-		assertEquals(Token.PLUS, l.next());
+		assertEquals(Token.ADD, l.next());
 		System.out.println(l.token());
 
-		assertEquals(Token.NUMBER, l.next());
+		assertEquals(Token.NUM, l.next());
+		System.out.println(l.token());
+	}
+
+	@Test
+	void testString() throws ParseException {
+		byte[] i = "\"asd\"".getBytes();
+		var l = new MathLexer(new BufferedString(i));
+		
+		assertEquals(Token.STR, l.next());
 		System.out.println(l.token());
 	}
 }

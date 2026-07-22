@@ -8,11 +8,9 @@ import util.BufferedString;
 
 public class MathParser {
 	private final MathLexer lexer;
-	private int depth;
 
-	private void trace(String text) {
-		for (int i = 0; i < depth; i++) System.out.print("│ ");
-		System.out.println(text);
+	public MathParser(String input) {
+		this(input.getBytes());
 	}
 
 	public MathParser(byte[] input) {
@@ -24,67 +22,71 @@ public class MathParser {
 	}
 
 	public Node parse() throws ParseException {
-		Node node = parseExpression(0);
+		Node node = expression(0);
 		if (lexer.next() != Token.EOF) throw new ParseException("Unexpected token", 0);
 		return node;
 	}
 
-	private int bindingPower(Token token) {
-	return switch (token) {
-		case PLUS -> 10;
-		case MULTIPLY -> 20;
-		default -> -1;
-	};
-}
+	private void expect(Token expect) throws ParseException {
+		Token actual = lexer.next();
+		if (actual != expect) throw new ParseException("Expected '" + expect + "' but found '" + actual + "'", 0);
+	}
 
-	public Node parseExpression(int minBP) throws ParseException {
-		trace("parseExpression(" + minBP + ")");
-		depth++;
-		Node left = parseNumber();
+	private double binding(Token token) {
+		return switch (token) {
+			case ADD, MIN -> 1.0;
+			case MUL, DIV, MOD -> 2.0;
+			default -> -1.0;
+		};
+	}
+
+	private Node prefix() throws ParseException {
+		Token token = lexer.next();
+		return switch (token) {
+			case NUM -> new NumberNode(lexer.token().toDouble());
+			case STR -> new StringNode(lexer.token());
+			case L_PAR -> {
+				Node node = expression(0);
+				expect(Token.R_PAR);
+				yield node;
+			}
+			default -> throw new ParseException("Unexpected token " + token, 0);
+		};
+	}
+
+	public Node expression(double limit) throws ParseException {
+		Node left = prefix();
 		while (true) {
 			Token operator = lexer.lookahead();
-			int bp = bindingPower(operator);
-			trace("lookahead = " + operator + " (bp=" + bp + ")");
-			if (bp < minBP) break;
+			double bp = binding(operator);
+			if (bp < limit) break;
+
 			lexer.next();
-			trace("enter right");
-			Node right = parseExpression(bp + 1);
-			trace("right parsed");
+
+			Node right = expression(bp + 0.1);
 			left = new BinaryNode(left, operator, right);
 		}
-		depth--;
-		trace("return");
 		return left;
 	}
 
-	private Node parseNumber() throws ParseException {
-		if (lexer.next() != Token.NUMBER) throw new ParseException("Expected number", 0);
-		double value = parseDouble(lexer.token());
-		trace("number = " + value);
-		return new NumberNode(value);
+	public static interface Node {}
+
+	public static record StringNode(BufferedString value) implements Node {
+		@Override
+		public String toString() {
+			return value.toString();
+		}
 	}
-
-	public static double parseDouble(BufferedString input) {
-		double value = 0;
-
-		int pos = input.start;
-		int end = input.end;
-
-		while (pos < end) {
-			int c = input.buffer[pos] & 0xFF;
-			if (c == '.') break;
-			value = value * 10 + (c - '0');
-			pos++;
+	public static record NumberNode(double value) implements Node {
+		@Override
+		public String toString() {
+			return String.valueOf(value);
 		}
-		if (pos == end) return value;
-		pos++;
-		double decimal = 0.1;
-		while (pos < end) {
-			int c = input.buffer[pos] & 0xFF;
-			value += (c - '0') * decimal;
-			decimal *= 0.1;
-			pos++;
+	}
+	public static record BinaryNode(Node left, Token op, Node right) implements Node {
+		@Override
+		public String toString() {
+			return "(" + left + " " + op.alias() + " " + right + ")";
 		}
-		return value;
 	}
 }

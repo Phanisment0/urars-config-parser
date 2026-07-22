@@ -59,49 +59,51 @@ public class MathLexer {
 				start = pos;
 				skip();
 				end = pos;
-				return Token.PLUS;
+				return Token.ADD;
 			} 
 			case '-' -> {
 				start = pos;
 				skip();
 				end = pos;
-				return Token.MINUS;
+				return Token.MIN;
 			}
 			case '*' -> {
 				start = pos;
 				skip();
 				end = pos;
-				return Token.MULTIPLY;
+				return Token.MUL;
 			}
 			case '/' -> {
 				start = pos;
 				skip();
 				end = pos;
-				return Token.DIVIDE;
+				return Token.DIV;
 			}
 			case '%' -> {
 				start = pos;
 				skip();
 				end = pos;
-				return Token.MODULO;
-			}
-			case '^' -> {
-				start = pos;
-				skip();
-				end = pos;
-				return Token.POWER;
+				return Token.MOD;
 			}
 			case '(' -> {
 				start = pos;
 				skip();
 				end = pos;
-				return Token.L_PAREN;
+				return Token.L_PAR;
 			}
 			case ')' -> {
 				start = pos;
 				skip();
 				end = pos;
-				return Token.R_PAREN;
+				return Token.R_PAR;
+			}
+			case '"' -> {
+				skip();
+				start = pos;
+				while (peek() != -1 && peek() != '"') skip();
+				end = pos;
+				skip();
+				return Token.STR;
 			}
 		}
 
@@ -122,7 +124,7 @@ public class MathLexer {
 				break;
 			}
 			end = pos;
-			return Token.NUMBER;
+			return Token.NUM;
 		}
 
 		throw new ParseException("Unexpected character '" + (char)c + "'", pos);
@@ -133,15 +135,24 @@ public class MathLexer {
 	}
 
 	public static enum Token {
-		NUMBER,
-		PLUS,
-		MINUS,
-		MULTIPLY,
-		DIVIDE,
-		MODULO,
-		POWER,
-		L_PAREN,
-		R_PAREN,
-		EOF;
+		STR(null),
+		NUM(null),
+		ADD("+"),
+		MIN("-"),
+		MUL("*"),
+		DIV("/"),
+		MOD("%"),
+		L_PAR("("),
+		R_PAR(")"),
+		EOF(null);
+
+		String alias;
+		Token(String alias) {
+			this.alias = alias;
+		}
+
+		public String alias() {
+			return alias != null ? alias : name();
+		}
 	}
 }
