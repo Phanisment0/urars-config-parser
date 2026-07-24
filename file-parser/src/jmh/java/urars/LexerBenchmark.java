@@ -2,8 +2,8 @@ package urars;
 import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.infra.Blackhole;
 
-import tokenize.Lexer;
-import tokenize.Lexer.Token;
+import io.phanisment.urars.lib.file_parser.tokenize.Lexer;
+import io.phanisment.urars.lib.file_parser.tokenize.Lexer.Token;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;

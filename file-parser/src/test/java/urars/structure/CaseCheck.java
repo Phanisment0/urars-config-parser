@@ -1,10 +1,10 @@
-package structure;
+package urars.structure;
 
 import java.text.ParseException;
 
 import org.junit.jupiter.api.Test;
 
-import parser.Parser;
+import io.phanisment.urars.lib.file_parser.parser.Parser;
 
 public class CaseCheck {
 

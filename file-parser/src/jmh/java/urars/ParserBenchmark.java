@@ -2,7 +2,9 @@ package urars;
 import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.infra.Blackhole;
 
-import parser.Parser;
+import io.phanisment.urars.lib.file_parser.UrArsFileParser;
+import io.phanisment.urars.lib.file_parser.config.ConfigSection;
+import io.phanisment.urars.lib.file_parser.parser.Parser;
 
 import java.io.IOException;
 import java.text.ParseException;
@@ -21,7 +23,7 @@ public class ParserBenchmark {
 
 	@Setup(Level.Trial)
 	public void setup() throws IOException {
-		var raw_small = "key { block example } # Comment\n";
+		var raw_small = "key { - mechanic{key=value;key0=value} context } # Comment\n";
 		small = raw_small.getBytes();
 		var raw_large = new StringBuilder();
 		for (int i = 0; i < 100; i++) raw_large.append("skill ex_").append(i).append(" {\n")
@@ -34,6 +36,12 @@ public class ParserBenchmark {
 		.append("test_").append(i).append("=Lololololo\n");
 		large = raw_large.toString().getBytes();
 		parser = new Parser(small);
+	}
+
+	@Benchmark
+	public void line_small(Blackhole bh) throws ParseException {
+		var data = (ConfigSection)UrArsFileParser.load(small);
+		bh.consume(data.getLine("key"));
 	}
 
 	@Benchmark

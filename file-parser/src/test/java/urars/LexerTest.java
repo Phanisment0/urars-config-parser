@@ -1,11 +1,11 @@
-package lexer;
+package urars;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-import tokenize.Lexer;
-import tokenize.Lexer.Token;
+import io.phanisment.urars.lib.file_parser.tokenize.Lexer;
+import io.phanisment.urars.lib.file_parser.tokenize.Lexer.Token;
 
 class LexerTest {
 	@Test

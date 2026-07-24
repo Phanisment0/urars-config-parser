@@ -85,6 +85,12 @@ public class MathLexer {
 				end = pos;
 				return Token.MOD;
 			}
+			case '.' -> {
+				start = pos;
+				skip();
+				end = pos;
+				return Token.DOT;
+			}
 			case '(' -> {
 				start = pos;
 				skip();
@@ -142,6 +148,7 @@ public class MathLexer {
 		MUL("*"),
 		DIV("/"),
 		MOD("%"),
+		DOT("."),
 		L_PAR("("),
 		R_PAR(")"),
 		EOF(null);

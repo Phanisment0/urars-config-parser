@@ -1,11 +1,11 @@
-package structure;
+package urars.structure;
 
 import java.text.ParseException;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestReporter;
 
-import parser.Parser;
+import io.phanisment.urars.lib.file_parser.parser.Parser;
 
 class EntryTest {
 	@Test

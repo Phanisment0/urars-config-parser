@@ -1,4 +1,4 @@
-package parser;
+package io.phanisment.urars.lib.file_parser.parser;
 
 import java.io.File;
 import java.io.IOException;
@@ -6,16 +6,19 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.text.ParseException;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
-import tokenize.Lexer;
-import tokenize.Lexer.Token;
-import util.BufferedString;
+import io.phanisment.urars.lib.file_parser.tokenize.Lexer;
+import io.phanisment.urars.lib.file_parser.tokenize.Lexer.Token;
+import io.phanisment.urars.lib.file_parser.util.BufferedString;
 
 public class Parser {
 	private final Lexer lexer;
-	private byte[] buffer;
+
+	public Parser() {
+		this(new byte[0]);
+	}
 
 	public Parser(File file) throws IOException {
 		this(file.toPath());
@@ -30,7 +33,10 @@ public class Parser {
 	}
 
 	public Parser(byte[] buffer) {
-		this.buffer = buffer;
+		this.lexer = new Lexer(buffer);
+	}
+
+	public Parser(BufferedString buffer) {
 		this.lexer = new Lexer(buffer);
 	}
 
@@ -40,27 +46,27 @@ public class Parser {
 				|| t == Token.EQUAL;
 	}
 
-	public List<Entry> parse() throws ParseException {
-		List<Entry> list = new ArrayList<>();
+	public Map<BufferedString, BufferedString> parse() throws ParseException {
+		Map<BufferedString, BufferedString> result = new HashMap<>();
 
 		while (true) {
 			Token token = lexer.next();
 			if (token == Token.EOF) break;
 			if (token == Token.NEW_LINE) continue;
-			if (token != Token.TEXT) throw new ParseException("Expected Key", lexer.pos);
+			if (token != Token.TEXT) throw new ParseException("Expected Key " + token, lexer.pos);
 
-			BufferedString header = parseKey();
+			BufferedString key = parseKey();
 
 			token = lexer.next();
 			if (token == Token.L_BRACKET) {
 				BufferedString value = parseBlock();
-				list.add(new Entry(header, value));
+				result.put(key, value);
 			} else if (token == Token.EQUAL) {
 				BufferedString value = parseField();
-				list.add(new Entry(header, value));
+				result.put(key, value);
 			} else throw new ParseException("Expected '=' or '{'", lexer.pos);
 		}
-		return list;
+		return result;
 	}
 
 	/**
@@ -71,7 +77,7 @@ public class Parser {
 		while (true)  {
 			Token token = lexer.lookahead();
 			if (token == Token.EOF) throw new ParseException("Unexpected EOF", lexer.pos);
-			if (isSytax(token)) return new BufferedString(buffer, start, lexer.end);
+			if (isSytax(token)) return new BufferedString(lexer.buffer, start, lexer.end);
 			lexer.next();
 		}
 	}
@@ -84,7 +90,7 @@ public class Parser {
 		while (true) {
 			Token token = lexer.next();
 			if (token == Token.EOF) throw new ParseException("Unexpected EOF", lexer.pos);
-			if (isSytax(token) || token == Token.NEW_LINE) return new BufferedString(buffer, start, lexer.end);
+			if (isSytax(token) || token == Token.NEW_LINE) return new BufferedString(lexer.buffer, start, lexer.start);
 		}
 	}
 
@@ -101,15 +107,18 @@ public class Parser {
 			if (token == Token.L_BRACKET) depth++;
 			else if (token == Token.R_BRACKET) depth--;
 		}
-		return new BufferedString(buffer, start, lexer.start);
+		return new BufferedString(lexer.buffer, start, lexer.end);
 	}
 
 	public BufferedString token() {
-		return new BufferedString(buffer, lexer.start, lexer.end);
+		return new BufferedString(lexer.buffer, lexer.start, lexer.end);
 	}
 
 	public void reset(byte[] new_buffer) {
 		this.lexer.reset(new_buffer);
-		this.buffer = new_buffer;
+	}
+
+	public void reset(BufferedString new_buffer) {
+		this.lexer.reset(new_buffer);
 	}
 }
